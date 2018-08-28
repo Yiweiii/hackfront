@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-// import roomView from './roomView.js';
-// import origRoom from './room.jpg';
-// import pinkRoom from './pinkRoom.jpg';
-// import blueRoom from './blueRoom.jpg';
-import './App.css';
-import origRoom from "./room.jpg";
-import pinkRoom from "./pinkRoom.jpg";
-import blueRoom from "./blueRoom.jpg";
+import origRoom from './room.jpg';
+import pinkRoom from './pinkRoom.jpg';
+import blueRoom from './blueRoom.jpg';
 
-class App extends Component {
+class roomView extends Component {
+
     constructor() {
         super();
         this.state = {
@@ -27,7 +23,7 @@ class App extends Component {
             <div className="App">
                 <button onClick = {this.handleChangeColor} className = "btn btn-secondary"></button>
                 <div>
-                    <img src={this.getRoomColor()} alt=""/>
+                    { this.getRoomColor() }
                 </div>
             </div>
         );
@@ -40,8 +36,8 @@ class App extends Component {
         } else if (this.state.roomChoice === 2) {
             userChoice = blueRoom;
         }
-        return userChoice;
+        return <img src={userChoice} alt=""/>;
     }
 }
 
-export default App;
+export default roomView;
